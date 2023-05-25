@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title%} Liste des Articles{% endblock %}
+{% block body %}
+{% if articles %}
+<table id="articles" class="table table-striped">
+<thead>
+<tr>
+<th>Nom</th>
+<th>Prix</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+{% for utilisateur in utilisateurs %}
+<tr>
+<td>{{ utilisateur.nom }}</td>
+<td>{{ utilisateur.adresse_mail }}</td>
+<td>{{ utilisateur.role }}</td>
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+<p>Aucun articles</p>
+{% endif %}
+{% endblock %}
